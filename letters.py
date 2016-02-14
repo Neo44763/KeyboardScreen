@@ -12,61 +12,6 @@ letters = []
 waitinglist = Queue.Queue()
 
 
-def convert(code):
-    if code == "KEY_Q":
-        return 'Q'
-    elif code == "KEY_W":
-        return 'W'
-    elif code == "KEY_E":
-        return 'E'
-    elif code == "KEY_R":
-        return 'R'
-    elif code == "KEY_T":
-        return 'T'
-    elif code == "KEY_Z":
-        return 'Z'
-    elif code == "KEY_U":
-        return 'U'
-    elif code == "KEY_I":
-        return 'I'
-    elif code == "KEY_O":
-        return 'O'
-    elif code == "KEY_P":
-        return 'P'
-    elif code == "KEY_A":
-        return 'A'
-    elif code == "KEY_S":
-        return 'S'
-    elif code == "KEY_D":
-        return 'D'
-    elif code == "KEY_F":
-        return 'F'
-    elif code == "KEY_G":
-        return 'G'
-    elif code == "KEY_H":
-        return 'H'
-    elif code == "KEY_J":
-        return 'J'
-    elif code == "KEY_K":
-        return 'K'
-    elif code == "KEY_L":
-        return 'L'
-    elif code == "KEY_Y":
-        return 'Y'
-    elif code == "KEY_X":
-        return 'X'
-    elif code == "KEY_C":
-        return 'C'
-    elif code == "KEY_V":
-        return 'V'
-    elif code == "KEY_B":
-        return 'B'
-    elif code == "KEY_N":
-        return 'N'
-    elif code == "KEY_M":
-        return 'M'
-
-
 class Listener(threading.Thread):
 
     def __init__(self):
@@ -85,8 +30,9 @@ class Listener(threading.Thread):
                 if event.type == evdev.ecodes.EV_KEY:
                     input = evdev.categorize(event)
                     if input.keystate:
-                        if convert(str(input.keycode)) != None:
-                            waitinglist.put(convert(str(input.keycode)))
+                        key = str(input.keycode).split('_', 1)[1]
+                        if key in string.ascii_uppercase:
+                            waitinglist.put(key)
 
     def stop(self):
         self.done = True
