@@ -6,8 +6,8 @@ import evdev
 import select
 import Queue
 import time
+import string
 
-root = Tkinter.Tk()
 letters = []
 waitinglist = Queue.Queue()
 
@@ -95,267 +95,17 @@ class Listener(threading.Thread):
 def draw():
     root.overrideredirect(True)
     root.geometry('+0+100')
-    w = Tkinter.Label(
-        root,
-        text="Q",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="W",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="E",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="R",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="T",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="Z",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="U",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="I",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="O",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="P",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="A",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="S",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="D",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="F",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="G",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="H",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="J",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="K",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="L",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="Y",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="X",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="C",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="V",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="B",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
 
-    w = Tkinter.Label(
-        root,
-        text="N",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
-    w = Tkinter.Label(
-        root,
-        text="M",
-        bg="black",
-        fg="white",
-        font=(
-            "Helvetica",
-         16))
-    w.pack(fill=Tkinter.X)
-    letters.append(w)
+    for x in string.ascii_uppercase:
+        w = Tkinter.Label(
+            root,
+            text=x,
+            bg="black",
+            fg="white",
+            font=(
+                "Helvetica", 16))
+        w.pack(fill=Tkinter.X)
+        letters.append(w)
 
 
 def searchLetter(letter):
@@ -379,13 +129,22 @@ def change_color():
     root.after(5, change_color)
 
 
+if len(sys.argv) != 2:
+    print "Usage: ./letters.py <Path to Keyboard>"
+    sys.exit(1)
+
+if not str(sys.argv[1]).startswith('/dev/input/event'):
+    print "Error while parsing Argument!\n Stop.."
+    sys.exit(1)
+
+root = Tkinter.Tk()
 draw()
 t = Listener()
 t.start()
 change_color()
 try:
     Tkinter.mainloop()
-except (KeyboardInterrupt, SystemExit):
+except:
     print ""
     print "Abbruch.."
     t.stop()
